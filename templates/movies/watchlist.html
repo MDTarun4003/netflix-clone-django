@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>My Watchlist</h2>
+
+{% for item in items %}
+    <div>
+        <img src="{{ item.movie.thumbnail.url }}" width="150">
+        <p>{{ item.movie.title }}</p>
+        <a href="{% url 'remove_watchlist' item.movie.id %}">Remove</a>
+    </div>
+{% empty %}
+    <p>No movies in watchlist</p>
+{% endfor %}
+
+{% endblock %}

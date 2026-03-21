@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>{{ movie.title }}</h2>
+
+<img src="{{ movie.thumbnail.url }}" width="300"><br><br>
+
+<p>{{ movie.description }}</p>
+
+<video width="600" controls>
+    <source src="{{ movie.video.url }}" type="video/mp4">
+</video>
+<h3>Recommended</h3>
+
+{% for m in recommended %}
+    <div>
+        <a href="{% url 'movie_detail' m.id %}">
+            <img src="{{ m.thumbnail.url }}" width="150">
+            <p>{{ m.title }}</p>
+        </a>
+    </div>
+{% endfor %}
+
+{% endblock %}

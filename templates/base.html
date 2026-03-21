@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  {% block title %}
+    <title>Netflix Clone</title>
+  {% endblock %}
+</head>
+<body>
+
+<nav>
+    <a href="/">Home</a> |
+    <a href="/accounts/logout/">Logout</a>
+    <form action="{% url 'search' %}" method="GET" style="display:inline;">
+    <input type="text" name="q" placeholder="Search movies">
+    <button type="submit">Search</button>
+    </form>
+    <a href="{% url 'watchlist' %}">My List</a>
+</nav>
+
+
+<hr>
+
+{% block content %}{% endblock %}
+
+</body>
+</html>

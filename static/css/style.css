@@ -1,0 +1,37 @@
+body {
+    background-color: #141414;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    background-color: black;
+    padding: 15px;
+}
+
+nav a {
+    color: red;
+    margin-right: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+h2 {
+    margin-left: 20px;
+}
+
+.movie-card {
+    width: 200px;
+    transition: transform 0.3s;
+}
+
+.movie-card:hover {
+    transform: scale(1.1);
+}
+
+.movie-row {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: auto;
+}

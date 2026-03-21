@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+  <title>Clone</title>
+
+
+{% block content %}
+
+<h2>Movies</h2>
+
+
+<div class="movie-row">
+    {% for movie in movies %}
+        <div class="movie-card">
+            <a href="{% url 'movie_detail' movie.id %}">
+                <img src="{{ movie.thumbnail.url }}" width="200">
+            </a>
+            <p>{{ movie.title }}</p>
+            <a href="{% url 'add_watchlist' movie.id %}">Add to Watchlist</a>
+        </div>
+    {% endfor %}
+</div>
+<h3>Genres</h3>
+
+{% for genre in genres %}
+    <a href="{% url 'genre_movies' genre.id %}">
+        {{ genre.name }}
+    </a> |
+{% endfor %}
+
+{% endblock %}
